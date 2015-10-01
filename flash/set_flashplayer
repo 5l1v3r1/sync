@@ -1,3 +1,5 @@
 sudo apt-get install alien
 sudo alien -i [flash.rpm]
 
+or 
+sudo apt-get install flashplugin-nonfree
