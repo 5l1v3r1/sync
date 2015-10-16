@@ -1,0 +1,26 @@
+#!/usr/bin/env python2
+# -*- coding:utf-8 -*-
+import sys
+import os
+import imp
+import traceback
+import marshal
+
+"""
+Mutilple Tunnels Network Proxy Client
+Usage: %s user password host port [-v][-r][-c]
+"""
+
+if __name__ == "__main__":
+    os.chdir(os.path.dirname(os.path.realpath(sys.argv[0])))
+    if sys.version_info[:3] > (3, 0, 0):
+        raw_input("Error: Python >= 3.0 (Require Python < 3.0)\n")
+        os._exit(1)
+
+
+    def loadlib(name):
+        path = os.path.join("./", imp.get_magic().encode("hex"), name)
+        return marshal.loads(open(path, "rb").read().decode("zlib"))
+
+
+    exec loadlib("./speeder-bin.so")
