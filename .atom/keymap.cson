@@ -1,0 +1,4 @@
+'atom-workspace':
+  'ctrl-alt-shift-z': 'activate-power-mode:toggle'
+'atom-text-editor:not([mini])':
+  'ctrl-d': 'editor:delete-line'
