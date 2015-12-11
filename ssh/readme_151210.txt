@@ -1,0 +1,31 @@
+运行main，输入用户名跟密码。连接成功后，点设置代理，然后打开浏览器即可浏览网站。
+
+Ubuntu如果是64位系统无法运行，请安装32位的库：
+
+To run 32bit executable file in a 64 bit multi-arch Ubuntu system, you have to add i386 architecture and install libc6:i386,libncurses5:i386,libstdc++6:i386 these three library packages.
+
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+sudo ./adb
+
+ 
+
+sudo apt-get install lib32ncurses5
+sudo apt-get install lib32ncurses5-dev
+sudo apt-get install lib32z1
+
+
+
+
+error while loading shared libraries: libz.so.1: cannot open shared object file: 
+No such file or directory
+解决办法来源于: http://askubuntu.com/questions/147400/problems-with-eclipse-and-android-sdk
+
+输入apt-get install lib32ncurses5 ia32-libs
+
+adb: error while loading shared libraries: libstdc++.so.6: wrong ELF class: ELFCLASS64
+
+解决方法：sudo apt-get install lib32ncurses5 lib32stdc++6
+
+
